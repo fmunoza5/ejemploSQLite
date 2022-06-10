@@ -20,6 +20,7 @@ private static String TELEFONO ="telefono";
 
 
     public DataBase (Context context){
+
         super(context, DATABASE_NAME,null,DATABASE_VERSION);
     }
 
@@ -66,13 +67,15 @@ private static String TELEFONO ="telefono";
     public List<Contactos> getAllContactos(){
 
         List<Contactos> listaContactos = new ArrayList<Contactos>();
+
         String query = "SELECT * FROM "+ TABLA;
+
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if(cursor.moveToFirst()){
             do{
                 Contactos contactos = new Contactos();
-                contactos.setId(Integer.parseInt(cursor.getString(0)));
+                contactos.setId(cursor.getString(0));
                 contactos.setNombre(cursor.getString(1));
                 contactos.setTelefono(cursor.getString(2));
                 listaContactos.add(contactos);

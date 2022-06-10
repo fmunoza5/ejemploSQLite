@@ -3,18 +3,18 @@ package cl.fmunoza.ejemplosqlite;
 public class Contactos {
 
     String Nombre, telefono;
-    int id;
+    String id;
 
     //CONSTRUCTORES
     public Contactos (){}
-    public Contactos(String nombre, String telefono, int id) {
-        Nombre = nombre;
+    public Contactos(String nombre, String telefono, String id) {
+        this.Nombre = nombre;
         this.telefono = telefono;
         this.id = id;
     }
 
     public Contactos(String nombre, String telefono) {
-        Nombre = nombre;
+        this.Nombre = nombre;
         this.telefono = telefono;
     }
 
@@ -31,10 +31,10 @@ public class Contactos {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 }
